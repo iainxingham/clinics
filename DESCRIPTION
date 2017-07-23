@@ -1,0 +1,16 @@
+Package: clinics
+Type: Package
+Title: Write Clinics to Diary
+Version: 0.1.0
+Authors@R: person("Iain", "Crossingham", email = "iain.crossingham@yahoo.co.uk",
+  role = c("aut", "cre"))
+Description: This is my own little package for entering a recurring 
+    (but with a complicated periodicity) event into a google calendar
+Licence: MIT | file LICENCE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.1.0)
+Imports:
+    lubridate,
+    rvest,
+    googleAuthR
