@@ -1,3 +1,4 @@
+# Clinics R package
 # Bank Holidays
 
 #' Scrape bank holiday dates from UK government website
