@@ -12,7 +12,7 @@
 #' @param bank_hols A date vector containing the dates of any bank holidays in the time period. No events
 #'   will be created on bank holidays
 #'
-#' @example
+#' @examples
 #' create_clinic_events(dmy("1/1/17"), dmy("7/1/17"), NULL, scrape_bh_dates())
 #'
 create_clinic_events <- function(start, end, excluded=NULL, bank_hols=NULL) {
@@ -57,6 +57,10 @@ create_clinic_events <- function(start, end, excluded=NULL, bank_hols=NULL) {
 #'   will be created on bank holidays
 #'
 #' @return A data frame containing details of clinics to create
+#'
+#' @examples
+#' list_of_clinics <- clinic_list(dmy("1/1/17"), dmy("1/2/17"))
+#' more_clinics <- clinic_list(today(), today()+day(14), bank_hols=scrape_bh_dates())
 clinic_list <- function(start, end, excluded=NULL, bank_hols=NULL) {
   dates_seq <-seq(from=start, to=end, by='days')
 
@@ -95,8 +99,8 @@ clinic_list <- function(start, end, excluded=NULL, bank_hols=NULL) {
 #' @return A list containing two items, both vectors of dates. \code{$exclude} contains days with
 #'   events that would otherwise clash with clinics. \code{$sundays} contains Sunday on calls
 #'
-#' @example
-#' get_existing_appointments(dmy("1/1/17), dmy("1/2/17"))
+#' @examples
+#' get_existing_appointments(dmy("1/1/17"), dmy("1/2/17"))
 get_existing_appointments <- function(start=today(), end=today()+days(7)) {
   excluded <- NULL
   ICUSundays <- NULL
@@ -153,7 +157,7 @@ get_existing_appointments <- function(start=today(), end=today()+days(7)) {
 #'
 #' @param appts A list of pre existing appointments created with get_existing_appointments()
 #'
-#' @example
+#' @examples
 #' # Using default parameters for get_existing_appointments()
 #' post_sunday_clinics(get_existing_appointments())
 post_Sunday_clinics <- function(appts) {

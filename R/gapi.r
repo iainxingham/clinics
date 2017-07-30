@@ -9,7 +9,7 @@
 #' to be obtained from Google - Google API console. Put the client ID in a variable called \code{gAPIclientID}
 #' and the secret in \code{gAPIsecret}. Create the \code{credentials.dat} file with \code{save(gAPIclientID, gAPIsecret, file="credentials.dat")}
 #'
-#' @example
+#' @examples
 #' gAPI_authenticate()
 #'
 gAPI_authenticate <- function() {
